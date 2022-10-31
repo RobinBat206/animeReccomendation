@@ -1,1 +1,6 @@
-//this is the start of a new program
+# this is the start of a new program
+import random
+
+listOfAnime = ["naruto", "dragon ball z", "bleach", "Chain Saw Man", ""]
+print("Your anime reccomendation is: " + random.choice(listOfAnime))
+x = 7
