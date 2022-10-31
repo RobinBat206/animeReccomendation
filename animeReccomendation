@@ -2,5 +2,6 @@
 import random
 
 listOfAnime = ["naruto", "dragon ball z", "bleach", "Chain Saw Man", ""]
-print("Your anime reccomendation is: " + random.choice(listOfAnime))
+print("Your anime recommendation is: " + random.choice(listOfAnime))
+print(x)
 x = 7
