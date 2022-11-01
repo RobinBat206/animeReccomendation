@@ -7,15 +7,18 @@ import os
 
 st.title("Anime for all!")
 listOfAnime = ["Naruto", "Dragon ball", "Bleach", "Chain Saw Man", "Digimon"]
-files = os.listdir("Pictures")
-#imageList = [Image.open('Pictures/1Naruto cover.jpeg'), Image.open('Pictures/2Dragon cover.jpg'), Image.open('Pictures/3bleach cover.jpeg'), Image.open('Pictures/4cm cover.jpeg'), Image.open('Pictures/5digimon cover.png')]
-imageStrings = ['Pictures/1Naruto cover.jpeg', 'Pictures/2Dragon cover.jpg', 'Pictures/3bleach cover.jpeg', 'Pictures/4cm cover.jpeg', 'Pictures/5digimon cover.png']
+files = os.listdir('Pictures')
+imageList = []
+for filename in files:
+    imageList.append('Pictures/' + filename)
+    imageList.sort()
+
 if st.button('Click for anime'):
-    #x = random.choice(listOfAnime)
-    x = random.randint(0, len(listOfAnime)-1)
-    y = listOfAnime[x]
-    st.write("Your anime recommendation is: " + y)
-    st.image(Image.open(imageStrings[x]))
+    randomIndex = random.randint(0, len(listOfAnime)-1)
+    randomAnime = listOfAnime[randomIndex]
+    st.write("Your anime recommendation is: " + randomAnime)
+    st.image(Image.open(imageList[randomIndex+1])) #Have to use +1 because file .DS store is always in directory
+    imageList.clear()
 
 
 
